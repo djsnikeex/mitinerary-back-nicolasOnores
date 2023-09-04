@@ -1,5 +1,7 @@
 import {Router} from 'express';
 import cityRouter from './city.js';
+import itineraryRouter from './itinerary.js';
+
 let router = Router();
 
 /* GET home page. */
@@ -10,6 +12,7 @@ router.get('/', function(req, res, next) {
 
 
 router.use('/cities', cityRouter);
+router.use('/itineraries', itineraryRouter);
 
 
 

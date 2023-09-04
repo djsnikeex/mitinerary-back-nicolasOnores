@@ -9,6 +9,7 @@ import { Schema,
         city: {type: String, required: true},
         country: {type: String, required: true},
         image: {type: String, required: true},
+        itineraries: [{type: Types.ObjectId, ref: "itineraries"}]
         
     },
     {

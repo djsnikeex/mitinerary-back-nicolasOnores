@@ -1,14 +1,14 @@
-import City from "../../models/City.js";
+import Itinerary from "../../models/itinerary.js";
 
-async function create(req,res){
+export default async(req,res)=>{
 
     try{
-        let one = await City.create(req.body)
+        await Itinerary.deleteOne({_id: req.params.id})
         return res.status(201).json({
             success: true,
-            message: 'created!',
-            data: one
+            message: 'deleted!'
         })
+        
     } catch(error){
         console.log(error);
         return res.status(500).json({
@@ -16,6 +16,6 @@ async function create(req,res){
             message: 'error'
         })
     }
-}
 
-export default create;
+
+}

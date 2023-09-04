@@ -1,4 +1,4 @@
-import City from "../../models/city.js";
+import City from "../../models/City.js";
 
 async function read(req,res)
 {
@@ -8,7 +8,7 @@ async function read(req,res)
     }
    
     try {
-        const cities = await City.find(queries)
+        const cities = await City.find(queries).populate('itineraries')
 
         if(cities.length > 0) {
             return res.status(200).json({
@@ -61,5 +61,7 @@ async function readOne(req, res){
         })
     } 
 }
+
+
 
 export {read, readOne};
