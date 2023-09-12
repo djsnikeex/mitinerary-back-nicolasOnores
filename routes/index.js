@@ -1,6 +1,8 @@
 import {Router} from 'express';
 import cityRouter from './city.js';
 import itineraryRouter from './itinerary.js';
+import userRouter from './user.js';
+import authRouter from './auth.js';
 
 let router = Router();
 
@@ -13,6 +15,9 @@ router.get('/', function(req, res, next) {
 
 router.use('/cities', cityRouter);
 router.use('/itineraries', itineraryRouter);
+router.use('/users', userRouter);
+router.use('/auth', authRouter);
+
 
 
 
