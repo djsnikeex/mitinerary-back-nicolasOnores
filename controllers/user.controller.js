@@ -14,6 +14,7 @@ const controller = {
             next(error)
         }
     },
+    
     createUser: async (req, res) => {
         try {
             const newUser = await User.create(req.body);
@@ -31,6 +32,21 @@ const controller = {
             })
         }
     },
+
+    getUser: async (req, res) => {
+        try {
+            const user = await User.findById(req.params.id);
+
+            return res.status(200).json({
+                success: true,
+                user
+            })
+
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
     deleteUser: () => {},
 }
 
