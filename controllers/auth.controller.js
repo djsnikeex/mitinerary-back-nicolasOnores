@@ -130,7 +130,7 @@ const authController = {
 
             const token = jwt.sign(
                 {
-                    _id: user._id,
+                    id: user._id,
                     email: user.email,
                     userName: user.userName,
                     image: user.image
