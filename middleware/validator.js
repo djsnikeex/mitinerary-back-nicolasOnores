@@ -8,9 +8,7 @@ export const validate = (schema) => [
                 success: false,
                 message: validation.error.details.map((x) => x.message),
             });
-        }
-
-        
+        }     
         return next();
     }
 ];

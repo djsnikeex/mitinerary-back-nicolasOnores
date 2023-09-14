@@ -5,14 +5,14 @@ let collection = "users";
 
 let schema = new Schema({
 
-    firstName: {type: String, required: true},
-    lastName: {type: String, required: true},
+    
     userName: {type: String, required: true},
     password: {type: String, required: true},
     email: {type: String, required: true},
-    country: {type: String, required: true},
+    country: {type: String, default: 'Argentina'},
     image: {type: String, required: true},
     online: {type: Boolean, default: false},
+    google: {type: Boolean, default: false},
     verified: {type: Boolean, default: true},
     verified_code: {type: String},
     itineraries: [{type: Types.ObjectId, ref: "itineraries"}]
